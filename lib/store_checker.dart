@@ -19,6 +19,7 @@ enum Source {
   IS_INSTALLED_FROM_OTHER_SOURCE,
   IS_INSTALLED_FROM_APP_STORE,
   IS_INSTALLED_FROM_TEST_FLIGHT,
+  IS_INSTALLED_FROM_IMIN_STORE,
   UNKNOWN
 }
 
@@ -64,6 +65,9 @@ class StoreChecker {
       } else if (sourceName.compareTo('ru.vk.store') == 0) {
         // Installed apk from RuStore
         return Source.IS_INSTALLED_FROM_RU_STORE;
+      } else if (sourceName.compareTo('com.imin.appstore') == 0) {
+        // Installed apk from iMin Store
+        return Source.IS_INSTALLED_FROM_IMIN_STORE;
       } else {
         // Installed apk from Amazon app store or other markets
         return Source.IS_INSTALLED_FROM_OTHER_SOURCE;
